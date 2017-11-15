@@ -1,6 +1,7 @@
 package com.isolation.portalapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -59,7 +60,8 @@ public class MainActivity extends AppCompatActivity{
                     System.out.println(c);
                 }
             }
-            catch(IOException e) {
+            catch(Exception e) {
+                return null;
             }
 
             return null;
@@ -75,7 +77,13 @@ public class MainActivity extends AppCompatActivity{
             InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 
-            ((TextView) findViewById(R.id.hello)).setText(p.classes.toString());
+            if(p == null){
+                return;
+            }
+
+            Intent intent = new Intent(getBaseContext(), GradeViewActivity.class);
+            intent.putExtra("myPortal", p);
+            startActivity(intent);
         }
     }
 }

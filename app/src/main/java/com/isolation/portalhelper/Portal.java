@@ -1,6 +1,7 @@
 package com.isolation.portalhelper;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +21,7 @@ import com.google.gson.JsonObject;
  * Connects to MCPS Portal
  * Represents a student
  */
-public class Portal {
+public class Portal implements Serializable{
 	
 	private static String mcps = "https://portal.mcpsmd.org/";
 	private Map<String, String> allCookies = new HashMap<String, String>();

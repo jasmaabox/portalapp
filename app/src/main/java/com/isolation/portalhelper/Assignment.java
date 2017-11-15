@@ -1,11 +1,13 @@
 package com.isolation.portalhelper;
 
+import java.io.Serializable;
+
 /**
  * School assignment
  *
  */
 
-public class Assignment {
+public class Assignment implements Serializable{
 	private String title;
 	private float points;
 	private float possible;

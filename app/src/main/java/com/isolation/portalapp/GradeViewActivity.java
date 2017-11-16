@@ -37,16 +37,13 @@ public class GradeViewActivity extends AppCompatActivity {
 
         for(SchoolClass c : p.classes){
 
-            TableRow tr = new TableRow(this);
-            tr.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
-
             View custom = inflater.inflate(R.layout.grade_cell, null);
             ((TextView)custom.findViewById(R.id.class_name)).setText(c.getTitle());
-            ((TextView)custom.findViewById(R.id.grade)).setText(c.getTotalPercent() + "");
+            ((TextView)custom.findViewById(R.id.grade)).setText(Math.round(c.getTotalPercent() * 100) + "");
 
-            tr.addView(custom);
+            System.out.println(c.toString());
 
-            table.addView(tr);
+            table.addView(custom);
         }
 
     }

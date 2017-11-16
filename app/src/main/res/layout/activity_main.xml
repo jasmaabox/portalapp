@@ -25,6 +25,7 @@
         android:layout_marginTop="128dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:text="327059"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,6 +37,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:text="Xjpp8150"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user" />
 

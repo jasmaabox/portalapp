@@ -1,9 +1,10 @@
 package com.isolation.portalhelper;
 
+import android.util.Base64;
+
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import android.util.Base64;
 import java.util.Formatter;
 
 import javax.crypto.Mac;
@@ -20,15 +21,13 @@ public class CryptoHelper {
 	 * @param inputString
 	 * @return
 	 */
-	private static String b64MD5(String inputString) {
+	private static String b64MD5(final String inputString) {
 		try{
 		    MessageDigest md = MessageDigest.getInstance("MD5");
 		    md.update(inputString.getBytes());
 	
 		    byte[] digest = md.digest();
-
-			System.out.println(digest);
-
+	
 		    String b64 = Base64.encodeToString(digest, Base64.DEFAULT);
 		    return b64.substring(0, b64.length() - 2);
 		}
